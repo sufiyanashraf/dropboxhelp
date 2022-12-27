@@ -28,9 +28,9 @@ access_token = response.json()["access_token"]
 dbx = dropbox.Dropbox(access_token)
 while True:
     try:
-        with open('https.txt', 'rb') as f:
+        with open('test.txt', 'rb') as f:
             file_contents = f.read()   
-        dbx.files_upload(file_contents, '/MSProxiespool/zarlish/https.txt', mode=dropbox.files.WriteMode('overwrite'))
+        dbx.files_upload(file_contents, '/test.txt', mode=dropbox.files.WriteMode('overwrite'))
     except dropbox.exceptions.AuthError as e:
         headers = {
             'Authorization': f"Basic {BASIC_AUTH}",
